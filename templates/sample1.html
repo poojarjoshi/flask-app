@@ -1,0 +1,35 @@
+<html !DOCTYPE>
+<head>
+<title>SQLite</title>
+</head>
+<body>
+
+<table border=1>
+{% for row in rows %}
+<tr>
+    <th>1st</th>
+    <th>2nd</th>
+    <th>3rd</th>
+    <th>4th</th>
+</tr>
+<form action="/delete/{{ row[0] }}" method="post">
+<tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+    <td><input type="submit" value="Delete" /></td>
+</tr>
+</form>
+{% endfor %}
+</table>
+<form action="/add" method="post">
+    <input type="text" id="one" name="one" value="" />
+    <input type="text" id="two" name="two" value="" />
+    <input type="text" id="three" name="three" value="" />
+    <input type="text" id="four" name="four" value="" />
+    <input type="text" id="five" name="five" value="" />
+    <input type="submit" value="Add" />
+</form>
+</body>
+</html>
